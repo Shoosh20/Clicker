@@ -1,0 +1,50 @@
+body {
+    text-align: center;
+    color: lightgray;
+    background-color: gray;
+}
+#clickValue {
+    font-size: 50px;
+}
+#shop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 6px;
+    font-size: 1.4em;
+}
+#level {
+    position: fixed;
+    top: -10px;
+    left: 10px;
+    padding: 6px;
+    font-size: 1.4em;
+    color: gold;
+}
+.shopButton {
+    background-color: lightgoldenrodyellow;
+}
+#clickButton {
+    background-color: lightgreen;
+    padding: 3px;
+    width: 70px;
+    height: 30px;
+}
+#rebirth {
+    background-color: lightskyblue;
+}
+#reset {
+    background-color: lightcoral;
+}
+button {
+    cursor: pointer;
+}
+.shopElements1 {
+    display: none;
+}
+.shopElements2 {
+    display: none;
+}
+.shopElements3 {
+    display: none;
+}
