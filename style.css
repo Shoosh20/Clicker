@@ -3,48 +3,44 @@ body {
     color: lightgray;
     background-color: gray;
 }
-#clickValue {
-    font-size: 50px;
-}
-#shop {
-    position: fixed;
-    top: 0;
-    right: 0;
-    padding: 6px;
-    font-size: 1.4em;
-}
-#level {
-    position: fixed;
-    top: -10px;
-    left: 10px;
-    padding: 6px;
-    font-size: 1.4em;
-    color: gold;
-}
-.shopButton {
-    background-color: lightgoldenrodyellow;
-}
-#clickButton {
-    background-color: lightgreen;
+#clicksButton {
+    size: 20px;
     padding: 3px;
     width: 70px;
     height: 30px;
+    background-color: lightgreen;
 }
-#rebirth {
-    background-color: lightskyblue;
+#clicks {
+    font-size: 50px;
 }
-#reset {
-    background-color: lightcoral;
+#clicksShop {
+    position: fixed;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    font-size: 1.4em;
+}
+#levelDiv {
+    position: fixed;
+    top: -10px;
+    left: 10px;
+    padding: 3px;
+    font-size: 1.4em;
+}
+#titleDiv {
+    padding: 6px;
+    top: -10;
+}
+#title{
+    font-size: 50px;
+}
+#clicksDiv {
+    padding: 6px;
 }
 button {
     cursor: pointer;
+    background-color: lightgoldenrodyellow;
 }
-.shopElements1 {
-    display: none;
-}
-.shopElements2 {
-    display: none;
-}
-.shopElements3 {
-    display: none;
+#levelUp {
+    background-color: lightskyblue;
 }
