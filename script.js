@@ -1,97 +1,101 @@
+// VarElements
+// Clicks/ClicksButton
+let clicksId = document.getElementById("clicks");
+let clicksButtonId = document.getElementById("clicksButton");
+let turnOnWorkers = document.getElementById("turnOnWorkers");
+// Get Upgrades
+let manualClicksId = document.getElementById("manualClicks");
+let workersId = document.getElementById("workers");
+let mcBuy1Id = document.getElementById("mcBuy1");
+let mcBuy10Id = document.getElementById("mcBuy10");
+let mcBuy100Id = document.getElementById("mcBuy100");
+let mcBuyMaxId = document.getElementById("mcBuyMax");
+let autoClickerId = document.getElementById("autoclicker");
+let buyAutoclicker = document.getElementById("buyAutoclicker");
+// Level
+let levelId = document.getElementById("level");
+// Other
+let resetId = document.getElementById("reset");
+let levelUpId = document.getElementById("levelUp");
+// Variables
 let clicks = 0;
-let plusOneClick = 1;
-let plusTenClick = 0;
-let plus100Click = 0;
-let clickButton = document.getElementById("clickButton");
-let rebirth = 1;
-let shopElementA = 0;
-let shopElementB = 0;
-let autoClicker = 0;
-let rebirthValue = 10000;
+let manualClicks = 1;
+let level = 1;
+let mcMax = 0;
+let levelUp = level * 10000;
 
-document.getElementById("clickButton").onclick = function(){
-    clicks = clicks + plusOneClick + plusTenClick + plus100Click;
-    document.getElementById("clickValue").innerHTML = clicks;
+clicksButtonId.onclick = function(){
+    clicks = clicks + manualClicks;
+    clicksId.innerHTML = clicks;
 };
-document.getElementById("plusOneClick").onclick = function(){
+
+mcBuy1Id.onclick = function(){
     if (clicks >= 10){
         clicks = clicks - 10;
-        plusOneClick = plusOneClick + 1;
-        document.getElementById("clickValue").innerHTML = clicks;
+        manualClicks = manualClicks + 1;
+        clicksId.innerHTML = clicks;
+        manualClicksId.innerHTML = manualClicks;
     }
     else {
-        alert("You Don't Have Enough Clicks!")
-    };
-    if (plusOneClick >= 10 && shopElementA <= 1){
-        shopElementA = shopElementA + 1;
-        document.getElementsByClassName('shopElements1')[0].style.display='block';
-        document.getElementsByClassName('shopElements3')[0].style.display='block';
+        alert("You don't have enough clicks!")
     };
 };
-document.getElementById("plusTenClick").onclick = function(){
+mcBuy10Id.onclick = function(){
     if (clicks >= 100){
         clicks = clicks - 100;
-        plusTenClick = plus100Click + 10;
-        document.getElementById("clickValue").innerHTML = clicks;
-        if (plusTenClick >= 10){
-            shopElementB = shopElementB + 1;
-            document.getElementsByClassName('shopElements2')[0].style.display='block';
-        };
+        manualClicks = manualClicks + 10;
+        clicksId.innerHTML = clicks;
+        manualClicksId.innerHTML = manualClicks;
     }
     else {
-        alert("You Don't Have Enough Clicks!");
+        alert("You don't have enough clicks!")
     };
 };
-document.getElementById("plus100Click").onclick = function(){
+mcBuy100Id.onclick = function(){
     if (clicks >= 1000){
         clicks = clicks - 1000;
-        plus100Click = plus100Click + 100;
-        document.getElementById("clickValue").innerHTML = clicks;
+        manualClicks = manualClicks + 100;
+        clicksId.innerHTML = clicks;
+        manualClicksId.innerHTML = manualClicks;
     }
     else {
-        alert("You Don't Have Enough Clicks!");
+        alert("You don't have enough clicks!")
     };
 };
-document.getElementById("autoClicker").onclick = function(){
-    if (clicks >= 100 && autoClicker <= 1){
-        clicks = clicks - 100;
+mcBuyMaxId.onclick = function(){
+    if (clicks >= 10){
+        mcMax = Math.floor(clicks / 10);
+        clicks = clicks - mcMax * 10;
+        manualClicks = manualClicks + mcMax;
+        clicksId.innerHTML = clicks;
+        manualClicksId.innerHTML = manualClicks;
+    }
+    else {
+        alert("You don't have enough clicks!");
+    };
+};
+document.getElementById("buyAutoclicker").onclick = function(){
+    if (clicks >= 1000){
+        clicks = clicks - 1000;
         setInterval(function(){
-            clickButton.click()
-        }, 1000)
-        document.getElementsByClassName('clickValue').innerHTML = clicks
-        document.getElementsByClassName('shopElements3')[0].style.display='none';
+            clicksButtonId.click()
+        }, 2555);
+        clicksId.innerHTML = clicks;
+        autoClickerId.style.display = "none";
     }
     else {
         alert("You Don't Have Enough Clicks!");
     };
 };
-document.getElementById("reset").onclick = function(){
-    clicks = 0;
-    plusOneClick = 1;
-    plusTenClick = 0;
-    plus100Click = 0;
-    rebirth = 0;
-    shopElementA = 0;
-    shopElementB = 0;
-    document.getElementById("clickValue").innerHTML = clicks;
-};
-document.getElementById("rebirth").onclick = function(){
-    if (clicks >= rebirth*rebirthValue){
-        clicks = 0;
-        plusOneClick = 1;
-        plusTenClick = 0;
-        plus100Click = 0;
-        rebirth = rebirth + 1;
-        shopElementA = 0;
-        shopElementB = 0;
-        document.getElementsByClassName('shopElements1')[0].style.display='none';
-        document.getElementsByClassName('shopElements2')[0].style.display='none';
-        document.getElementsByClassName('shopElements3')[0].style.display='none';
-        document.getElementById("clickValue").innerHTML = clicks;
-        document.getElementById("level").innerHTML = `Level ${rebirth}`;
-        alert(`Congrats on reaching level ${rebirth}!`);
+
+levelUpId.onclick = function(){
+    if (clicks >= levelUp){
+        level = level + 1;
+        levelUp = level * 10000;
+        levelId.innerHTML = (`Level ${level}`);
+        alert(`Congrats on leveling up! You are now level ${level}. Your next levelup is at ${levelUp} clicks.`);
     }
     else {
-        alert(`You must first reach ${rebirth*rebirthValue} clicks!`);
-    };
+        alert(`You need ${levelUp} more clicks to level up!`);
+    }
 };
