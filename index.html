@@ -7,38 +7,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!--Title-->
-    <div id="titleDiv">
-        <h1 id="title">Clicker 2</h1>
+    <h1>Clicker Game</h1>
+    <div>
+        <label id="clickValue">0</label><br>
+        <button type="button" id="clickButton">Click</button><br>
+        <button id="rebirth">Rebirth</button><br>
+        <button id="reset">Reset</button>
     </div>
-    <!--Clicks/Click Button-->
-    <div id="clicksDiv">
-        <label id="clicks">0</label><br>
-        <button id="clicksButton">Click</button><br>
-        <button id="levelUp">Level Up</button>
-    </div>
-    <!--Clicks Shop-->
-    <div id="clicksShop">
-        <h3>Clicks Shop</h3>
-        <!--Manual Clicks-->
-        <div id="manualClicksDiv">        
-            <h4>Manual Clicks</h4>
-            <label id="manualClicks">1</label><br>
-            <button id="mcBuy1">1</button><button id="mcBuy10">10</button><button id="mcBuy100">100</button><button id="mcBuyMax">Max</button>
+    <br>
+    <div id="shop">
+        <h3>Buy Upgrades</h3>
+        <h4>+1 Click</h4>
+            <button id="plusOneClick" class="shopButton">Buy | 10 Clicks</button>
+        <div class="shopElements1">
+        <h4>+10 Click</h4>
+            <button id="plusTenClick" class="shopButton">Buy | 100 Clicks</button>
+        <div class="shopElements2">
+        <h4>+100 Clicks</h4>
+            <button id="plus100Click" class="shopButton">Buy | 1000 Clicks</button>
         </div>
-        <!--Autoclicker-->
-        <div id="autoclicker">
-            <h4>Autoclicker</h4>
-            <button id="buyAutoclicker">Buy</button>
+        <div class="shopElements3">
+        <h4>Autoclicker</h4>
+            <button id="autoClicker" class="shopButton">Buy | 100 Clicks</button>
         </div>
     </div>
-    <!--Level-->
-    <div id="levelDiv">
+    <div>
         <h3 id="level">Level 1</h3>
-    </div>
-</body>
-<script src="script.js"></script>
-</html>
     </div>
 </style>
 <script src="script.js"></script>
